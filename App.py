@@ -4,6 +4,10 @@ import os
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
+import tensorflow as tf
+tf.config.threading.set_inter_op_parallelism_threads(1)
+tf.config.threading.set_intra_op_parallelism_threads(1)
+
 from werkzeug.utils import secure_filename
 from Crash_detection import predict_video, load_model
 

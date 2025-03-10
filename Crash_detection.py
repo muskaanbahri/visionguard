@@ -5,6 +5,9 @@ from keras.src.saving import load_model
 import os
 import requests
 
+physical_devices = tf.config.list_physical_devices("GPU")
+for device in physical_devices:
+    tf.config.experimental.set_memory_growth(device, True)
 # Google Drive direct download link for model.h5
 MODEL_URL = "https://drive.google.com/uc?export=download&id=11UFsJ1SLEi330k7Q2wznZNG5X1UH3JH3"
 MODEL_PATH = "./model.h5"

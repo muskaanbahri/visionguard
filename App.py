@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 from werkzeug.utils import secure_filename
 from Crash_detection import predict_video, load_model
 
